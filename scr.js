@@ -1,18 +1,26 @@
+var status, tim, gram, start, clear, bloom, drip, grams, seconds, minutes, hours, secs, grainc, tt, t, cof, wat, tm, ts;
+
 window.onload = function() {
-  var status = document.getElementById('status'),
-  tim = document.getElementById('time'),
-  gram = document.getElementById('grams'),
-  start = document.getElementById('start'),
-  clear = document.getElementById('clear'),
-  bloom = 30,
-  drip = 30,
-  grams = 0,
-  seconds = 0,
-  minutes = 0,
-  hours = 0,
-  secs = 0,
-  grainc, tt, t = 0,
-  cof, wat, tm, ts;
+  status = document.getElementById('status');
+  tim = document.getElementById('time');
+  gram = document.getElementById('grams');
+  start = document.getElementById('start');
+  clear = document.getElementById('clear');
+  bloom = 30;
+  drip = 30;
+  grams = 0;
+  seconds = 0;
+  minutes = 0;
+  hours = 0;
+  secs = 0;
+  t = 0;
+  /* Start button */
+  start.onclick = startmes;
+  /* Clear button */
+  clear.onclick = function() {
+  clearTimeout(t);
+  initvars();
+  }
 };
 
 function add() {
@@ -58,8 +66,6 @@ function startmes() {
   timer();
 }
 
-/* Start button */
-start.onclick = startmes;
 
 function initvars() {
   status.textContent = "Starting"
@@ -69,10 +75,5 @@ function initvars() {
   minutes = 0;
   grams = 0;
   secs = 0;
-}
-/* Clear button */
-clear.onclick = function() {
-  clearTimeout(t);
-  initvars();
 }
 
