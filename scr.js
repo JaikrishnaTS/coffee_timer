@@ -1,7 +1,7 @@
-var status, tim, gram, start, clear, bloom, drip, grams, seconds, minutes, hours, secs, grainc, tt, t, cof, wat, tm, ts;
+var desc, tim, gram, start, clear, bloom, drip, grams, seconds, minutes, hours, secs, grainc, tt, t, cof, wat, tm, ts;
 
 window.onload = function() {
-  status = document.getElementById('status');
+  desc = document.getElementById('status');
   tim = document.getElementById('time');
   gram = document.getElementById('grams');
   start = document.getElementById('start');
@@ -28,11 +28,11 @@ function add() {
   if (secs > bloom && secs <= (tt - drip))
     grams += grainc;
   if (secs == 1)
-    status.textContent = "Wait for Blooming";
+    desc.textContent = "Wait for Blooming";
   if (secs == bloom)
-    status.textContent = "Add water";
+    desc.textContent = "Add water";
   if (secs == tt - drip)
-    status.textContent = "Wait for Dripping";
+    desc.textContent = "Wait for Dripping";
   if (++seconds >= 60) {
     seconds = 0;
     if (++minutes >= 60)
@@ -44,7 +44,7 @@ function add() {
   if (secs < tt)
     timer();
   else
-    status.textContent = "Done!";
+    desc.textContent = "Done!";
 }
 
 function timer() {
@@ -68,7 +68,7 @@ function startmes() {
 
 
 function initvars() {
-  status.textContent = "Starting"
+  desc.textContent = "Starting"
   tim.textContent = "00:00";
   gram.textContent = "0";
   seconds = 0;
