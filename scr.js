@@ -13,7 +13,7 @@ window.onload = function() {
   secs = 0,
   grainc, tt, t = 0,
   cof, wat, tm, ts;
-}
+};
 
 function add() {
   secs++;
