@@ -1,4 +1,5 @@
-var status = document.getElementById('status'),
+window.onload = function() {
+  var status = document.getElementById('status'),
   tim = document.getElementById('time'),
   gram = document.getElementById('grams'),
   start = document.getElementById('start'),
@@ -12,6 +13,7 @@ var status = document.getElementById('status'),
   secs = 0,
   grainc, tt, t = 0,
   cof, wat, tm, ts;
+}
 
 function add() {
   secs++;
