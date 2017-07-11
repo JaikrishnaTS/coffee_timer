@@ -1,0 +1,32 @@
+.stats {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center
+}
+.container {
+  width: 200px;
+  margin: 0 auto;
+}
+.buttons {
+  width: 100px;
+  margin: 0 auto;
+}
+.row { 
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.cell {
+  margin-left: auto;
+}
+.smallcell {
+  margin-left: auto;
+}
+.first {
+  align-self: flex-start;
+  width: 150px;
+}
+.inn {
+  width: 100%;
+}
