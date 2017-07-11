@@ -1,0 +1,32 @@
+<html>
+<head>
+<title> Coffee timer </title>
+<script src="scr.js">
+</head>
+<body>
+<div class="stats">
+  <label id="status">Starting</label><br>
+  <label id="time">00:00</label><br>
+  <label id="grams">0</label><br>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="first">Coffee:</div>
+    <div class="cell"><input class="inn" type="number" id="coffee" value="26"> </div>
+  </div>
+  <div class="row">
+    <div class="first">Water:</div>
+    <div class="cell"><input class="inn" type="number" id="water" value="360"></div>
+  </div>
+  <div class="row">
+    <div class="first">Time:</div>
+    <div class="smallcell"><input class="inn" type="number" id="totalmin" value="3"></div>
+    <div class="smallcell"><input class="inn" type="number" id="totalsec" value="10"></div>
+  </div>
+</div>
+<div class="buttons">
+<button id="start">start</button>
+<button id="clear">clear</button>
+</div>
+</body>
+</html>
