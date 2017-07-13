@@ -1,15 +1,9 @@
 var interval = null;
 var currentIncrement = 0;
 var initialised = false;
-var clicked = false;
 var coffee = 0, water = 0, tt = 0, curgram = 0, bloom = 30, drip = 30;
 
-$(".playpause").click(function(e) {
-  if (clicked) {
-    e.preventDefault();
-    return false;
-  }
-
+function ppclick() {
   if (!initialised) {
     reset();
     initialised = true;
@@ -19,11 +13,8 @@ $(".playpause").click(function(e) {
   } else {
     reset();
   }
-});
+}
 
-$(".pause").click(function() {
-  reset();
-});
 
 function initialiseTimer() {
   interval = setInterval(function() {
@@ -71,15 +62,16 @@ function setCurrentIncrement() {
 }
 
 function reset() {
-  currentIncrement = 0;
-  initialised = false;
   clearInterval(interval);
+  currentIncrement = 0;
   $("#coffee").val("22");
-  $("#minutes").val("03");
+  $("#minutes").val("02");
   $("#seconds").val("00");
   $("#water").val("210");
   $(".playpause span").removeClass();
   $(".playpause span").addClass("play");
+  //$(".playpause").click(ppclick);
   $(".desc").text("Start").hide();
   $(".wat").show();
+  initialised = false;
 }
