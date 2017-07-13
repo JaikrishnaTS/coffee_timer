@@ -3,6 +3,7 @@ var currentIncrement = 0;
 var initialised = false;
 var completed = false;
 var coffee = 0, water = 0, tt = 0, curgram = 0, bloom = 30, drip = 30;
+var noSleep = new NoSleep();
 
 function ppclick() {
   if (completed) {
@@ -23,6 +24,7 @@ function initialiseTimer() {
     var current = setCurrentIncrement();
     updateStopwatch(current);
   }, 1000);
+  noSleep.enable();
   coffee = $("#coffee").val();
   water = $("#water").val();
   mins = parseInt($("#minutes").val());
@@ -49,6 +51,7 @@ function updateStopwatch(increment) {
     clearInterval(interval);
     completed = true;
     $(".desc").text("Done!");
+    noSleep.disable();
   }
   if(increment > bloom && increment <= tt - drip) {
     curgram += grainc;
@@ -88,4 +91,5 @@ function reset() {
   $(".wat").show();
   initialised = false;
   completed = false;
+  noSleep.disable();
 }
